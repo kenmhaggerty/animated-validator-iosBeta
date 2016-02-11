@@ -20,7 +20,7 @@
                                 <rect key="frame" x="20" y="43" width="280" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="MZj-PK-Kfk"/>
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="f2Y-ej-3Dw"/>
@@ -30,7 +30,7 @@
                                 <rect key="frame" x="20" y="81" width="280" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="ulf-K5-2tn"/>
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="XBp-gV-xSm"/>
@@ -40,7 +40,7 @@
                                 <rect key="frame" x="20" y="119" width="280" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="rOH-Nh-Idp"/>
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="4Ty-Fr-e6F"/>
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="20" y="157" width="280" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="Rwb-iX-Z7G"/>
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="kgR-02-gri"/>
@@ -60,7 +60,7 @@
                                 <rect key="frame" x="20" y="195" width="280" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="rNa-OI-CPg"/>
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="NK7-81-2aA"/>

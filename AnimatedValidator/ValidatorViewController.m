@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordConfirmTextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (nonatomic, strong) NSMutableArray *blankTextFields;
 @property (nonatomic, strong) NSMutableArray *invalidTextFields;
 @property (nonatomic) BOOL animating;
 
@@ -36,6 +37,8 @@
     self.passwordTextField.accessibilityLabel = PASSWORDTEXTFIELD;
     self.passwordConfirmTextField.accessibilityLabel = PASSWORDCONFIRMTEXTFIELD;
     
+    [self setBlankTextFields:[NSMutableArray arrayWithArray:@[self.emailTextField, self.emailConfirmTextField, self.phoneTextField, self.passwordTextField, self.passwordConfirmTextField]]];
+    
     [self.submitButton setEnabled:NO];
     [self.submitButton setHidden:YES];
     
@@ -52,6 +55,21 @@
         [sender setBackgroundColor:[UIColor whiteColor]];
         CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);
         [sender setTransform:transform];
+        if (sender.text.length) {
+            [self.blankTextFields removeObject:sender];
+        }
+        else {
+            [self.blankTextFields addObject:sender];
+        }
+    }
+    
+    if (!self.invalidTextFields.count && !self.blankTextFields.count) {
+        
+        [UIView animateWithDuration:0.5f animations:^{
+            //
+        } completion:^(BOOL finished) {
+            //
+        }];
     }
 }
 
