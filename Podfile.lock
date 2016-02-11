@@ -7,12 +7,14 @@ PODS:
   - OCMockito (1.4.0):
     - OCHamcrest (~> 4.0)
   - Specta (1.0.4)
+  - UIScrollView-Keyboard (0.1.0)
 
 DEPENDENCIES:
   - Expecta (~> 0.2.4)
   - KIF (~> 3.0)
   - OCMockito (~> 1.0)
   - Specta (from `https://github.com/specta/specta.git`)
+  - UIScrollView-Keyboard (~> 0.1.0)
 
 EXTERNAL SOURCES:
   Specta:
@@ -29,5 +31,6 @@ SPEC CHECKSUMS:
   OCHamcrest: cd63d27f48a266d4412c0b295b01b8f0940efa81
   OCMockito: 4981140c9a9ec06c31af40f636e3c0f25f27e6b2
   Specta: 69bb134672aae190a1379ff91df07dad8dd1f869
+  UIScrollView-Keyboard: 962e2b9f9af281c8d0e60883892becae5e33b344
 
 COCOAPODS: 0.39.0

@@ -8,6 +8,7 @@
 
 #import "ValidatorViewController.h"
 #import "Constants.h"
+#import "UIScrollView+Keyboard.h"
 
 @interface ValidatorViewController ()<UITextFieldDelegate>
 
@@ -17,7 +18,9 @@
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordConfirmTextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (nonatomic, strong) IBOutlet NSLayoutConstraint *constraintShowSubmitButton;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *constraintSubmitButtonTop;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *constraintSubmitButtonBottom;
 @property (nonatomic, strong) NSMutableArray *blankTextFields;
 @property (nonatomic, strong) NSMutableArray *invalidTextFields;
 @property (nonatomic) BOOL animating;
@@ -38,14 +41,31 @@
     self.passwordTextField.accessibilityLabel = PASSWORDTEXTFIELD;
     self.passwordConfirmTextField.accessibilityLabel = PASSWORDCONFIRMTEXTFIELD;
     
+    [self.scrollView dismissKeyboardWithTap];
+    
     [self setBlankTextFields:[NSMutableArray arrayWithArray:@[self.emailTextField, self.emailConfirmTextField, self.phoneTextField, self.passwordTextField, self.passwordConfirmTextField]]];
     
     [self.submitButton setUserInteractionEnabled:NO];
-    [self.constraintShowSubmitButton setActive:NO];
+    [self.constraintSubmitButtonTop setActive:NO];
+    [self.constraintSubmitButtonBottom setActive:NO];
     
     [self setInvalidTextFields:[NSMutableArray array]];
     [self setAnimating:NO];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.scrollView startObservingKeyboardNotifications];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.scrollView stopObservingKeyboardNotifications];
 }
 
 - (IBAction)textFieldChanged:(UITextField *)sender {
@@ -66,10 +86,12 @@
     
     BOOL showSubmitButton = (!self.invalidTextFields.count && !self.blankTextFields.count && [self textFieldHasValidInput:sender]);
     [self.submitButton setUserInteractionEnabled:showSubmitButton];
-    [self.constraintShowSubmitButton setActive:showSubmitButton];
+    [self.constraintSubmitButtonTop setActive:showSubmitButton];
+    [self.constraintSubmitButtonBottom setActive:showSubmitButton];
     [self.view setNeedsUpdateConstraints];
     [UIView animateWithDuration:0.5f animations:^{
         [self.view layoutIfNeeded];
+        if (showSubmitButton) [self.scrollView scrollRectToVisible:self.submitButton.frame animated:YES];
     }];
 }
 
