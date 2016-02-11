@@ -22,7 +22,7 @@
 		44CD1C2F19215BE800140BD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44CD1C2D19215BE800140BD0 /* InfoPlist.strings */; };
 		44CD1C3C19215D0A00140BD0 /* ValidatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD1C3B19215D0A00140BD0 /* ValidatorViewController.m */; };
 		44CD1C3F19215E3B00140BD0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CD1C3E19215E3B00140BD0 /* Constants.m */; };
-		5BBECA301BD6D2B700FFFAE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBECA2F1BD6D2B700FFFAE2 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		5BBECA301BD6D2B700FFFAE2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBECA2F1BD6D2B700FFFAE2 /* Launch Screen.storyboard */; };
 		800DD5E15C974404ABADB2FA /* libPods-AnimatedValidatorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6296CDC2AD0A4B6CB401192C /* libPods-AnimatedValidatorTests.a */; };
 /* End PBXBuildFile section */
 
@@ -223,7 +223,7 @@
 		44CD1BFA19215BE700140BD0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "al-tyus.com";
 				TargetAttributes = {
 					44CD1C2219215BE800140BD0 = {
@@ -396,6 +396,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -456,6 +457,7 @@
 				GCC_PREFIX_HEADER = "AnimatedValidator/AnimatedValidator-Prefix.pch";
 				INFOPLIST_FILE = "AnimatedValidator/AnimatedValidator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.al-tyus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +471,7 @@
 				GCC_PREFIX_HEADER = "AnimatedValidator/AnimatedValidator-Prefix.pch";
 				INFOPLIST_FILE = "AnimatedValidator/AnimatedValidator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.al-tyus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,6 +494,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "AnimatedValidatorTests/AnimatedValidatorTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.al-tyus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -510,6 +514,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnimatedValidator/AnimatedValidator-Prefix.pch";
 				INFOPLIST_FILE = "AnimatedValidatorTests/AnimatedValidatorTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.al-tyus.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
