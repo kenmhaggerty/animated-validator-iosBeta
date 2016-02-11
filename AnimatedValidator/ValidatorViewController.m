@@ -40,6 +40,7 @@
     
     [self setBlankTextFields:[NSMutableArray arrayWithArray:@[self.emailTextField, self.emailConfirmTextField, self.phoneTextField, self.passwordTextField, self.passwordConfirmTextField]]];
     
+    [self.submitButton setUserInteractionEnabled:NO];
     [self.constraintShowSubmitButton setActive:NO];
     
     [self setInvalidTextFields:[NSMutableArray array]];
@@ -64,13 +65,11 @@
     }
     
     BOOL showSubmitButton = (!self.invalidTextFields.count && !self.blankTextFields.count && [self textFieldHasValidInput:sender]);
+    [self.submitButton setUserInteractionEnabled:showSubmitButton];
     [self.constraintShowSubmitButton setActive:showSubmitButton];
     [self.view setNeedsUpdateConstraints];
     [UIView animateWithDuration:0.5f animations:^{
-        [self.submitButton setUserInteractionEnabled:NO];
         [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        [self.submitButton setUserInteractionEnabled:YES];
     }];
 }
 
