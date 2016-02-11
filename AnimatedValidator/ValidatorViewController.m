@@ -17,6 +17,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordConfirmTextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (nonatomic, strong) NSMutableArray *invalidTextFields;
+@property (nonatomic) BOOL animating;
 
 @end
 
@@ -37,6 +39,101 @@
     [self.submitButton setEnabled:NO];
     [self.submitButton setHidden:YES];
     
+    [self setInvalidTextFields:[NSMutableArray array]];
+    [self setAnimating:NO];
+    
+}
+
+- (IBAction)validateTextField:(UITextField *)sender {
+    
+    if ([self textFieldHasValidInput:sender] || !sender.text.length) {
+        [self.invalidTextFields removeObject:sender];
+        [sender.layer removeAllAnimations];
+        [sender setBackgroundColor:[UIColor whiteColor]];
+    }
+    else {
+        [self.invalidTextFields addObject:sender];
+        [self animateTextFields];
+    }
+}
+
+- (BOOL)textFieldHasValidInput:(UITextField *)textField {
+    
+    if ([textField isEqual:self.emailTextField]) {
+        
+        NSArray *emailComponents = [textField.text componentsSeparatedByString:@"@"];
+        if (emailComponents.count != 2) return NO;
+        
+        NSString *local = emailComponents[0];
+        NSString *domain = emailComponents[1];
+        NSMutableCharacterSet *validLocalCharacters = [NSMutableCharacterSet alphanumericCharacterSet];
+        [validLocalCharacters addCharactersInString:@".-_+"];
+        NSMutableCharacterSet *validDomainCharacters = [NSMutableCharacterSet alphanumericCharacterSet];
+        [validDomainCharacters addCharactersInString:@".-"];
+        
+        if ([local stringByTrimmingCharactersInSet:validLocalCharacters].length+[domain stringByTrimmingCharactersInSet:validDomainCharacters].length) return NO;
+        
+        if (![domain containsString:@"."]) return NO;
+        
+        return YES;
+    }
+    
+    if ([textField isEqual:self.emailConfirmTextField]) {
+        
+        return [textField.text isEqualToString:self.emailTextField.text];
+    }
+    
+    if ([textField isEqual:self.phoneTextField]) {
+        
+        if (textField.text.length < 7) return NO;
+        
+        NSCharacterSet *validPhoneCharacters = [NSCharacterSet characterSetWithCharactersInString:@"+0123456789"];
+        if ([textField.text stringByTrimmingCharactersInSet:validPhoneCharacters].length) return NO;
+        
+        return YES;
+    }
+    
+    if ([textField isEqual:self.passwordTextField]) {
+        
+        if (textField.text.length < 6) return NO;
+        
+        return YES;
+    }
+    
+    if ([textField isEqual:self.passwordConfirmTextField]) {
+        
+        if (![textField.text isEqualToString:self.passwordTextField.text]) return NO;
+        
+        return YES;
+    }
+    
+    return YES;
+}
+
+- (void)animateTextFields {
+    
+    if (!self.invalidTextFields.count) [self setAnimating:NO];
+    if (self.animating) return;
+    
+    [self setAnimating:YES];
+    NSTimeInterval animationDuration = 1.0f;
+    
+    [UIView animateWithDuration:animationDuration*0.5f animations:^{
+        for (UITextField *textField in self.invalidTextFields) {
+            [textField setBackgroundColor:[UIColor redColor]];
+        }
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:animationDuration*0.5f animations:^{
+            for (UITextField *textField in self.invalidTextFields) {
+                [textField setBackgroundColor:[UIColor whiteColor]];
+            }
+        } completion:^(BOOL finished) {
+            
+            [self setAnimating:NO];
+            [self animateTextFields];
+        }];
+    }];
 }
 
 
