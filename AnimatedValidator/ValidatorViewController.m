@@ -44,14 +44,18 @@
     
 }
 
-- (IBAction)validateTextField:(UITextField *)sender {
+- (IBAction)textFieldChanged:(UITextField *)sender {
     
     if ([self textFieldHasValidInput:sender] || !sender.text.length) {
         [self.invalidTextFields removeObject:sender];
         [sender.layer removeAllAnimations];
         [sender setBackgroundColor:[UIColor whiteColor]];
     }
-    else {
+}
+
+- (IBAction)validateTextField:(UITextField *)sender {
+    
+    if (![self textFieldHasValidInput:sender] && sender.text.length) {
         [self.invalidTextFields addObject:sender];
         [self animateTextFields];
     }
