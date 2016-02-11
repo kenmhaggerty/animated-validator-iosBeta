@@ -117,16 +117,21 @@
     
     [self setAnimating:YES];
     NSTimeInterval animationDuration = 1.0f;
+    CGFloat transformScale = 1.1f;
     
     [UIView animateWithDuration:animationDuration*0.5f animations:^{
         for (UITextField *textField in self.invalidTextFields) {
             [textField setBackgroundColor:[UIColor redColor]];
+            CGAffineTransform transform = CGAffineTransformMakeScale(transformScale, transformScale);
+            [textField setTransform:transform];
         }
     } completion:^(BOOL finished) {
         
         [UIView animateWithDuration:animationDuration*0.5f animations:^{
             for (UITextField *textField in self.invalidTextFields) {
                 [textField setBackgroundColor:[UIColor whiteColor]];
+                CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+                [textField setTransform:transform];
             }
         } completion:^(BOOL finished) {
             
