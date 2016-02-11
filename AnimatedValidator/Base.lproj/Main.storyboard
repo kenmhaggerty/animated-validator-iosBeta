@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Validator View Controller-->
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGp-cx-7Je">
-                                <rect key="frame" x="20" y="43" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGp-cx-7Je">
+                                <rect key="frame" x="16" y="43" width="288" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -26,8 +27,8 @@
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="f2Y-ej-3Dw"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gP-em-8QC">
-                                <rect key="frame" x="20" y="81" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gP-em-8QC">
+                                <rect key="frame" x="16" y="81" width="288" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -36,8 +37,8 @@
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="XBp-gV-xSm"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xwC-GM-0Ce">
-                                <rect key="frame" x="20" y="119" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xwC-GM-0Ce">
+                                <rect key="frame" x="16" y="119" width="288" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -46,8 +47,8 @@
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="4Ty-Fr-e6F"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSx-Ia-RI8">
-                                <rect key="frame" x="20" y="157" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSx-Ia-RI8">
+                                <rect key="frame" x="16" y="157" width="288" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -56,8 +57,8 @@
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="kgR-02-gri"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ9-B1-hJs">
-                                <rect key="frame" x="20" y="195" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ9-B1-hJs">
+                                <rect key="frame" x="16" y="195" width="288" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -66,8 +67,8 @@
                                     <action selector="validateTextField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="NK7-81-2aA"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHi-Rz-uKZ">
-                                <rect key="frame" x="20" y="233" width="280" height="30"/>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHi-Rz-uKZ">
+                                <rect key="frame" x="136" y="233" width="49" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="">
                                     <accessibilityTraits key="traits" button="YES"/>
                                     <bool key="isElement" value="YES"/>
@@ -78,8 +79,29 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jHi-Rz-uKZ" secondAttribute="top" priority="750" id="0X1-kJ-f1P"/>
+                            <constraint firstItem="0gP-em-8QC" firstAttribute="top" secondItem="nGp-cx-7Je" secondAttribute="bottom" constant="8" id="0ZM-v7-fS6"/>
+                            <constraint firstItem="xwC-GM-0Ce" firstAttribute="top" secondItem="0gP-em-8QC" secondAttribute="bottom" constant="8" id="1NV-nq-ndY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CQ9-B1-hJs" secondAttribute="trailing" id="1sv-Ku-L9h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xwC-GM-0Ce" secondAttribute="trailing" id="EiY-Mk-GPu"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xwC-GM-0Ce" secondAttribute="leading" id="HLJ-u4-Epz"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nSx-Ia-RI8" secondAttribute="leading" id="IFr-tE-i49"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nSx-Ia-RI8" secondAttribute="trailing" id="Pdl-T7-JrA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0gP-em-8QC" secondAttribute="leading" id="Qpb-wZ-4bG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CQ9-B1-hJs" secondAttribute="leading" id="TOX-oF-9QQ"/>
+                            <constraint firstItem="jHi-Rz-uKZ" firstAttribute="top" secondItem="CQ9-B1-hJs" secondAttribute="bottom" constant="8" id="W6O-KS-a9T"/>
+                            <constraint firstItem="CQ9-B1-hJs" firstAttribute="top" secondItem="nSx-Ia-RI8" secondAttribute="bottom" constant="8" id="WTP-4g-TLk"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nGp-cx-7Je" secondAttribute="leading" id="eAh-xK-mFm"/>
+                            <constraint firstItem="nSx-Ia-RI8" firstAttribute="top" secondItem="xwC-GM-0Ce" secondAttribute="bottom" constant="8" id="iBq-gG-lQl"/>
+                            <constraint firstItem="jHi-Rz-uKZ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="oG1-cT-mQC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0gP-em-8QC" secondAttribute="trailing" id="ohg-Tf-cGB"/>
+                            <constraint firstItem="nGp-cx-7Je" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="23" id="qDm-cw-OI0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nGp-cx-7Je" secondAttribute="trailing" id="zPL-n4-MNJ"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="constraintShowSubmitButton" destination="W6O-KS-a9T" id="w5u-96-1LC"/>
                         <outlet property="emailConfirmTextField" destination="0gP-em-8QC" id="MPO-0Z-Ypn"/>
                         <outlet property="emailTextField" destination="nGp-cx-7Je" id="co6-me-ILd"/>
                         <outlet property="passwordConfirmTextField" destination="CQ9-B1-hJs" id="Qzh-jM-6Uz"/>
