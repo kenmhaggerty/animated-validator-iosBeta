@@ -50,6 +50,8 @@
         [self.invalidTextFields removeObject:sender];
         [sender.layer removeAllAnimations];
         [sender setBackgroundColor:[UIColor whiteColor]];
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+        [sender setTransform:transform];
     }
 }
 
